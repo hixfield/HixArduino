@@ -1,0 +1,16 @@
+#define IR_LEFT      0xE5CFBD7F
+#define IR_RIGHT     0xF076C13B
+#define IR_POWER     0xE318261B
+#define IR_PLUS      0xD7E84B1B
+#define IR_MINUS     0x97483BFB
+#define IR_REPEAT    0xFFFFFFFF
+#define IR_0         0xC101E57B
+#define IR_1         0x9716BE3F
+#define IR_2         0x3D9AE3F7
+#define IR_3         0x6182021B
+#define IR_4         0x8C22657B
+#define IR_5         0x488F3CBB
+#define IR_6         0x449E79F
+#define IR_7         0x32C6FDF7
+#define IR_8         0x1BC0157B
+#define IR_9         0x3EC3FC1B

@@ -1,0 +1,20 @@
+#define IR_LEFT      0x69948D59
+#define IR_RIGHT     0xDC9BFE29
+#define IR_UP        0xB5F23DBB
+#define IR_DOWN      0xE3916084
+#define IR_POWER     0xC993B34B
+#define IR_VOLPLUS   0xB624C519
+#define IR_VOLMIN    0xBC6CFD2F
+#define IR_CHANUP    0x976A8457
+#define IR_CHANDOWN  0x7B8646BE
+#define IR_0         0x9721C416
+#define IR_1         0x90AFB06B
+#define IR_2         0x18D62BB8
+#define IR_3         0x536C0227
+#define IR_4         0xBDF0DACD
+#define IR_5         0x98EE61F9
+#define IR_6         0xFAD78AF6
+#define IR_7         0x8139E8B3
+#define IR_8         0xF2BD765D
+#define IR_9         0x65C4E72D
+#define IR_REPEAT    0x00000000 //telenet does not seam to have a repeat, just sends the command code again
