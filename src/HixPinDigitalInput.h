@@ -10,7 +10,7 @@ class HixPinDigitalInput : public HixPinDigital {
   public:
 
     HixPinDigitalInput(int nPinNumber);
-    void begin();
+    bool begin();
     void attachInterrupt( void (isr)(void), int mode);
 };
 

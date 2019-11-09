@@ -9,10 +9,10 @@ class HixPin {
     const int m_nPinNumber;
 
   public:
-  	
+
     int getPinNumber();
     HixPin(int nPinNumber);
-    virtual void begin() = 0;
+    virtual bool begin() = 0;
 };
 
 

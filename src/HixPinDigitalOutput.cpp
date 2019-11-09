@@ -4,8 +4,10 @@
 HixPinDigitalOutput::HixPinDigitalOutput(int nPinNumber): HixPinDigital(nPinNumber) {
 }
 
-void HixPinDigitalOutput::begin() {
+bool HixPinDigitalOutput::begin() {
   pinMode(m_nPinNumber, OUTPUT);
+  //return non error
+  return true;
 }
 
 void HixPinDigitalOutput::high(void) {
