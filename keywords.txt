@@ -14,6 +14,8 @@ HixPinAnalogInput 			KEYWORD1
 HixTimeout					KEYWORD1
 HixDS18B20 					KEYWORD1
 HixAnalogJoystick			KEYWORD1
+HixPinPWM 					KEYWORD1
+HixPinPWM25KHz 				KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
@@ -79,6 +81,17 @@ getXPercent					KEYWORD2
 getYPercent					KEYWORD2
 calibrateRest				KEYWORD2
 calibrate					KEYWORD2
+
+# HixPinPWM
+# ----------------------------------
+analogWriteRaw				KEYWORD2
+analogWritePercent 			KEYWORD2
+getRaw 						KEYWORD2
+getpercent 					KEYWORD2
+
+# HixPinPWM25KHz
+# ----------------------------------
+
 
 ######################################
 # Constants (LITERAL1)
