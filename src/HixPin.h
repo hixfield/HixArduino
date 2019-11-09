@@ -2,8 +2,6 @@
 #define HixPin_h
 
 
-//*virtual* class for inherited HixPinInput and HixPinOutput
-
 class HixPin {
 
   protected:
@@ -11,9 +9,11 @@ class HixPin {
     const int m_nPinNumber;
 
   public:
+  	
     int getPinNumber();
     HixPin(int nPinNumber);
     virtual void begin() = 0;
 };
+
 
 #endif

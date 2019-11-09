@@ -1,6 +1,7 @@
 #ifndef HixAnalogJoystick_h
 #define HixAnalogJoystick_h
 
+
 class HixAnalogJoystick {
 
   private:
@@ -16,6 +17,7 @@ class HixAnalogJoystick {
     int m_nRestY;      //value when stick is at rest
 
   public:
+    
     //connects the X to the specified pin, and calibrates for min, max and rest values
     HixAnalogJoystick(int nPinX,
                       int nPinY,
@@ -40,5 +42,6 @@ class HixAnalogJoystick {
     int get(int nValue, int nJoystickMin, int nJoystickMax,  int nJoystickRest, int nOutputMin, int nOutputMax);
 
 };
+
 
 #endif

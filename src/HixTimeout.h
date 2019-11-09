@@ -1,6 +1,7 @@
 #ifndef HixTimeout_h
 #define HixTimeout_h
 
+
 class HixTimeout {
 
   private:
@@ -25,5 +26,6 @@ class HixTimeout {
     unsigned long timeoutMs(void);
 
 };
+
 
 #endif
