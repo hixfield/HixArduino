@@ -5,7 +5,7 @@ HixAnalogJoystick::HixAnalogJoystick(int nPinX,
                                      int nPinY,
                                      int nMinX, int nMaxX, int nRestX,
                                      int nMinY, int nMaxY, int nRestY
-                                    ): m_nPinX(nPinX), m_nPinY(nPinY) {
+                                    ): m_cAnalogInputX(nPinX), m_cAnalogInputY(nPinY) {
   //set X values
   m_nMinX = nMinX;
   m_nMaxX = nMaxX;
@@ -19,11 +19,11 @@ HixAnalogJoystick::HixAnalogJoystick(int nPinX,
 }
 
 int HixAnalogJoystick::getXRaw(void) {
-  return analogRead(m_nPinX);
+  return m_cAnalogInputX.analogRead();
 }
 
 int HixAnalogJoystick::getYRaw(void) {
-  return analogRead(m_nPinY);
+  return m_cAnalogInputY.analogRead();
 }
 
 int HixAnalogJoystick::getX(int nOutputMin, int nOutputMax) {

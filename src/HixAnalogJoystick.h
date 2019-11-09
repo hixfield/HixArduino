@@ -2,19 +2,21 @@
 #define HixAnalogJoystick_h
 
 
+#include "HixPinAnalogInput.h"
+
 class HixAnalogJoystick {
 
   private:
 
-    const int m_nPinX; //used for reading the analogue value for X
-    int m_nMinX;       //min possible value (put stick all the way left)
-    int m_nMaxX;       //max possible value (put stick all the way right)
-    int m_nRestX;      //value when stick is at rest
+    HixPinAnalogInput m_cAnalogInputX; //used for reading the analogue value for X
+    int m_nMinX;                       //min possible value (put stick all the way left)
+    int m_nMaxX;                       //max possible value (put stick all the way right)
+    int m_nRestX;                      //value when stick is at rest
 
-    const int m_nPinY; //used for reading the analogue value for Y
-    int m_nMinY;       //min possible value (put stick all the way up)
-    int m_nMaxY;       //max possible value (put stick all the way down)
-    int m_nRestY;      //value when stick is at rest
+    HixPinAnalogInput m_cAnalogInputY;  //used for reading the analogue value for Y
+    int m_nMinY;                        //min possible value (put stick all the way up)
+    int m_nMaxY;                        //max possible value (put stick all the way down)
+    int m_nRestY;                       //value when stick is at rest
 
   public:
     

@@ -6,25 +6,52 @@
 # Datatypes (KEYWORD1)
 #######################################
 
+HixPin						KEYWORD1
+HixPinDigital 				KEYWORD1
+HixPinDigitalInput 			KEYWORD1
+HixPinDigitalOutput         KEYWORD1
+HixPinAnalogInput 			KEYWORD1
 HixTimeout					KEYWORD1
+HixDS18B20 					KEYWORD1
 HixAnalogJoystick			KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
 
-#HixAnalogJoystick
+# HixPin
+# ----------------------------------
+getPinNumber				KEYWORD2
+begin 						KEYWORD2
 
-getXRaw						KEYWORD2
-getYRaw						KEYWORD2
-getX						KEYWORD2
-getY						KEYWORD2
-getXPercent					KEYWORD2
-getYPercent					KEYWORD2
-calibrateRest				KEYWORD2
-calibrate					KEYWORD2
+# HixPinDigital
+# ----------------------------------
 
-#HixTimeout
+digitalRead					KEYWORD2
+isHigh						KEYWORD2
+isLow						KEYWORD2
+
+# HixPinDigitalInput
+# ----------------------------------
+
+attachInterrupt				KEYWORD2
+
+# HixPinDigitalOutput
+# ----------------------------------
+
+high						KEYWORD2
+low							KEYWORD2
+digitalWrite 				KEYWORD2
+blink						KEYWORD2
+toggle						KEYWORD2
+
+# HixPinAnalogInput
+# ----------------------------------
+
+analogRead 					KEYWORD2
+
+# HixTimeout
+# ----------------------------------
 
 restart						KEYWORD2
 invalidate					KEYWORD2
@@ -36,6 +63,22 @@ timeLeftMs					KEYWORD2
 timepastMs					KEYWORD2
 timeoutMs					KEYWORD2
 
+# HixDS18B20
+# ----------------------------------
+getTemp						KEYWORD2
+printId						KEYWORD2
+
+# HixAnalogJoystick
+# ----------------------------------
+
+getXRaw						KEYWORD2
+getYRaw						KEYWORD2
+getX						KEYWORD2
+getY						KEYWORD2
+getXPercent					KEYWORD2
+getYPercent					KEYWORD2
+calibrateRest				KEYWORD2
+calibrate					KEYWORD2
 
 ######################################
 # Constants (LITERAL1)
