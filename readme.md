@@ -5,9 +5,12 @@ Objected oriented components for working with the Arduino:
 - HixPinDigital
 - HixPinDigitalOutput
 - HixPinDigitalInput
+- HixPinPWM
+- HixPinPWM28KHz
+- HixPinAnalogInput
+- HixTimeout
 - HixDS18B20
 - HixAnalogJoystick
-- HixTimeout
 
 
 ##HixPin
