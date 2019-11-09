@@ -6,21 +6,39 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-HixAnalogJoystick	KEYWORD1
+HixTimeout					KEYWORD1
+HixAnalogJoystick			KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
-getXRaw			KEYWORD2
-getYRaw			KEYWORD2
-getX			KEYWORD2
-getY			KEYWORD2
-getXPercent		KEYWORD2
-getYPercent		KEYWORD2
-calibrateRest		KEYWORD2
-calibrate		KEYWORD2
+
+#HixAnalogJoystick
+
+getXRaw						KEYWORD2
+getYRaw						KEYWORD2
+getX						KEYWORD2
+getY						KEYWORD2
+getXPercent					KEYWORD2
+getYPercent					KEYWORD2
+calibrateRest				KEYWORD2
+calibrate					KEYWORD2
+
+#HixTimeout
+
+restart						KEYWORD2
+invalidate					KEYWORD2
+isExpired					KEYWORD2
+isRunning					KEYWORD2
+isInvalidated				KEYWORD2
+updateTimeoutAndRestoart	KEYWORD2
+timeLeftMs					KEYWORD2
+timepastMs					KEYWORD2
+timeoutMs					KEYWORD2
+
 
 ######################################
 # Constants (LITERAL1)
-#######################################
-KEY_NONE		LITERAL1
+######################################
+
+KEY_NONE					LITERAL1
