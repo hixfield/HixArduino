@@ -2,15 +2,15 @@
 #include <Arduino.h>
 
 
-HixTimeout::HixTimeout(unsigned long ulDelayMs, bool invalidated) {
+HixTimeout::HixTimeout(unsigned long ulDelayMs, bool bInvalidated) {
   updateTimeoutAndRestart(ulDelayMs);
-  m_bInvalidated = invalidated;
+  m_bInvalidated = bInvalidated;
 }
 
-bool HixTimeout::isExpired(bool restartIfExpired) {
+bool HixTimeout::isExpired(bool bRestartIfExpired) {
   //if I am invalidated return expired immediatly
   if (m_bInvalidated) {
-    if  (restartIfExpired) {
+    if  (bRestartIfExpired) {
       restart();
     }
     return true;
@@ -18,7 +18,7 @@ bool HixTimeout::isExpired(bool restartIfExpired) {
   //depending on overflow do different calculations
   bool ret = currentDiff() > ((float)m_ulDelayMs);
   //restart if requested
-  if (ret && restartIfExpired) {
+  if (ret && bRestartIfExpired) {
     restart();
   }
   //return our value

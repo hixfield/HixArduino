@@ -13,10 +13,10 @@ class HixTimeout {
 
   public:
 
-    HixTimeout(unsigned long ulDelayMs, bool invalidated = false);
+    HixTimeout(unsigned long ulDelayMs, bool bInvalidated = false);
     void restart(void);
     void invalidate(void);
-    bool isExpired(bool restartIfExpired = false);
+    bool isExpired(bool bRestartIfExpired = false);
     bool isRunning(void);
     bool isInvalidated(void);
     void updateTimeoutAndRestart(unsigned long ulDelayMslyMs);
