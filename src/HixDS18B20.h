@@ -8,7 +8,7 @@
 
 class HixDS18B20: public HixPin {
 
-    static const float INVALID_TEMP  = -127;
+    static constexpr float INVALID_TEMP  = -127.0f;
 
     OneWireNg_CurrentPlatform * m_pOneWire;
     OneWireNg::Id               m_sensorId;

@@ -1,6 +1,9 @@
 #include <Arduino.h>
 #include "HixPinPWM25KHz.h"
 
+//only works on arduino boards => these have TCCR1A defined
+#ifdef TCCR1A
+
 HixPinPWM25KHz::HixPinPWM25KHz(int nPinNumber): HixPin(nPinNumber) {
 }
 
@@ -62,3 +65,5 @@ float HixPinPWM25KHz::getPercent(void) {
   }
   return (float(value) * 100.0f) / 320.0f;
 }
+
+#endif

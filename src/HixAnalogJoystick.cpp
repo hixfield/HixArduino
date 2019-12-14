@@ -53,7 +53,7 @@ void HixAnalogJoystick::calibrateRest(void) {
   m_nRestY = getYRaw();
 }
 
-void HixAnalogJoystick::calibrate(int nDurationSeconds = 5) {
+void HixAnalogJoystick::calibrate(int nDurationSeconds) {
   //reset to extreme values so they will certainly be overwritten
   m_nMinX = 1024;
   m_nMaxX = 0;
