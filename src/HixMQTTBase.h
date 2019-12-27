@@ -16,6 +16,9 @@ class HixMQTTBase : public EspMQTTClient {
     //my constructed client name
     char m_szClientName[255];
     char *createClientName(const char *szRoom, const char *szDeviceType, const char *szDeviceTag);
+    //counters for the sections
+    unsigned int m_nPublishCountDevice = 0;
+    unsigned int m_nPublishCountStatus = 0;
 
    public:
     HixMQTTBase(const char *szWifi_SSID,
@@ -29,8 +32,10 @@ class HixMQTTBase : public EspMQTTClient {
     bool begin();
     //this creates a absolute path in the format of MyName/path" (do not start the path with a /!)
     String topicForPath(const char *path);
-    //published the static values e.g room, type...
+    //published the device values e.g room, type...
     bool publishDeviceValues(void);
+    //published status value; base implementation pushed and increements the count
+    bool publishStatusValues(void);
 };
 
 #endif

@@ -32,6 +32,7 @@ String HixMQTTBase::topicForPath(const char* path) {
 bool HixMQTTBase::publishDeviceValues(void) {
     if (isConnected()) {
         //static values are published with retain!
+        publish(topicForPath("device/count"), m_nPublishCountDevice, true);
         publish(topicForPath("device/room"), m_room, true);
         publish(topicForPath("device/device_type"), m_deviceType, true);
         publish(topicForPath("device/device_version"), m_deviceVersion, true);
@@ -39,6 +40,21 @@ bool HixMQTTBase::publishDeviceValues(void) {
         publish(topicForPath("device/device_name"), getMqttClientName());
         publish(topicForPath("device/wifi_ssid"), WiFi.SSID(), true);
         publish(topicForPath("device/wifi_ip"), WiFi.localIP().toString());
+        //increment our publish ounter
+        m_nPublishCountDevice++;
+        //return non error
+        return true;
+    }
+    //not connected, return error
+    return false;
+}
+
+bool HixMQTTBase::publishStatusValues(void) {
+    if (isConnected()) {
+        //static values are published with retain!
+        publish(topicForPath("status/count"), m_nPublishCountStatus, true);
+        //increment our publish ounter
+        m_nPublishCountStatus++;
         //return non error
         return true;
     }
