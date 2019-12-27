@@ -32,6 +32,9 @@ void HixPinDigitalOutput::blink(bool bOn, int nNumberOfBlinks, int nDelayMs) {
 }
 
 void HixPinDigitalOutput::blink(bool bOn, int nNumberOfBlinks, int nDelayOnMs, int nDelayOffMs) {
+  //save state
+  bool bLastState = digitalRead();
+  //do blinking
   for (int i = 0; i < nNumberOfBlinks; i++) {
     //led on
     digitalWrite(bOn);
@@ -40,4 +43,6 @@ void HixPinDigitalOutput::blink(bool bOn, int nNumberOfBlinks, int nDelayOnMs, i
     digitalWrite(!bOn);
     delay(nDelayOffMs);
   }
+  //restore state
+  digitalWrite(bLastState);
 }
