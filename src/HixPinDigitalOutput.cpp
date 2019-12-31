@@ -18,8 +18,8 @@ void HixPinDigitalOutput::low(void) {
   digitalWrite(false);
 }
 
-void HixPinDigitalOutput::digitalWrite(bool value) {
-  ::digitalWrite(m_nPinNumber, value);
+void HixPinDigitalOutput::digitalWrite(bool bValue) {
+  ::digitalWrite(m_nPinNumber, bValue);
 }
 
 void HixPinDigitalOutput::toggle(void) {
