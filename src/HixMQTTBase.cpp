@@ -52,8 +52,8 @@ bool HixMQTTBase::publishDeviceValues(void) {
 bool HixMQTTBase::publishStatusValues(void) {
     if (isConnected()) {
         //static values are published with retain!
-        publish(topicForPath("status/count"), m_nPublishCountStatus, true);
-        publish(topicForPath("status/wifi_rssi"), WiFi.RSSI(), true);
+        publish(topicForPath("status/count"), m_nPublishCountStatus, false);
+        publish(topicForPath("status/wifi_rssi"), WiFi.RSSI(), false);
         //increment our publish ounter
         m_nPublishCountStatus++;
         //return non error
