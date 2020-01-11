@@ -1,7 +1,5 @@
 #include "HixLED.h"
 
-
-
 HixLED::HixLED(int nPinNumber) : HixPinDigitalOutput(nPinNumber) {
 }
 
@@ -24,6 +22,10 @@ void HixLED::off(void) {
     m_mode = HixLedMode::off;
     HixPinDigitalOutput::low();
     m_ticker.detach();
+}
+
+void HixLED::blink(bool bOn, int nNumberOfBlinks, int nDelayMs) {
+    HixPinDigitalOutput::blink(bOn, nNumberOfBlinks, nDelayMs);
 }
 
 void HixLED::slowBlink(void) {
@@ -49,8 +51,8 @@ void HixLED::fastBlink(void) {
 
 void HixLED::fadeInOut(void) {
     if (m_mode == HixLedMode::fadeInOut) return;
-    m_mode           = HixLedMode::fadeInOut;
-    m_nFadeCounter   = 0;
+    m_mode = HixLedMode::fadeInOut;
+    m_nFadeCounter = 0;
     m_bFadeDirection = true;
     m_ticker.detach();
     m_ticker.attach_ms(m_delayFadeInOutMs / m_nFadeSteps, std::bind(&HixLED::tickerISR, this));
@@ -58,28 +60,28 @@ void HixLED::fadeInOut(void) {
 
 void HixLED::tickerISR(void) {
     switch (m_mode) {
-    case HixLedMode::slowBlink:
-        HixPinDigitalOutput::toggle();
-        break;
-    case HixLedMode::blink:
-        HixPinDigitalOutput::toggle();
-        break;
-    case HixLedMode::fastBlink:
-        HixPinDigitalOutput::toggle();
-        break;
-    case HixLedMode::fadeInOut:
-        //count up or down
-        if (m_bFadeDirection)
-            m_nFadeCounter++;
-        else
-            m_nFadeCounter--;
-        //reverse direction if we hit a bounds
-        if (m_nFadeCounter > m_nFadeSteps) m_bFadeDirection = false;
-        if (m_nFadeCounter == 0) m_bFadeDirection = true;
-        //update the led
-        ::analogWrite(m_nPinNumber, m_nPWMStep * m_nFadeCounter);
-        break;
-    default:
-        break;
+        case HixLedMode::slowBlink:
+            HixPinDigitalOutput::toggle();
+            break;
+        case HixLedMode::blink:
+            HixPinDigitalOutput::toggle();
+            break;
+        case HixLedMode::fastBlink:
+            HixPinDigitalOutput::toggle();
+            break;
+        case HixLedMode::fadeInOut:
+            //count up or down
+            if (m_bFadeDirection)
+                m_nFadeCounter++;
+            else
+                m_nFadeCounter--;
+            //reverse direction if we hit a bounds
+            if (m_nFadeCounter > m_nFadeSteps) m_bFadeDirection = false;
+            if (m_nFadeCounter == 0) m_bFadeDirection = true;
+            //update the led
+            ::analogWrite(m_nPinNumber, m_nPWMStep * m_nFadeCounter);
+            break;
+        default:
+            break;
     }
 }
