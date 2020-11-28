@@ -10,7 +10,7 @@ class HixPinDigitalOutput : public HixPinDigital {
   public:
 
     HixPinDigitalOutput(int nPinNumber);
-    bool begin(uint8_t mode);
+    bool begin(int mode);
     void high(void);
     void low(void);
     void digitalWrite(bool bValue);
