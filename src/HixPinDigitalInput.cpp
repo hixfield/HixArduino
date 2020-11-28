@@ -4,7 +4,12 @@
 HixPinDigitalInput::HixPinDigitalInput(int nPinNumber): HixPinDigital(nPinNumber) {
 }
 
-bool HixPinDigitalInput::begin(int mode = INPUT) {
+bool HixPinDigitalInput::begin() {
+  return begin(INPUT);
+}
+
+
+bool HixPinDigitalInput::begin(int mode) {
   pinMode(m_nPinNumber, mode);
   //return non error
   return true;
