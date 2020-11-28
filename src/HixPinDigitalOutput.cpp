@@ -4,7 +4,7 @@
 HixPinDigitalOutput::HixPinDigitalOutput(int nPinNumber): HixPinDigital(nPinNumber) {
 }
 
-bool HixPinDigitalOutput::begin(uint8_t mode = OUTPUT)) {
+bool HixPinDigitalOutput::begin(uint8_t mode = OUTPUT) {
   pinMode(m_nPinNumber, mode);
   //return non error
   return true;
