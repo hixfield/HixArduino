@@ -5,7 +5,7 @@ HixPinDigitalOutput::HixPinDigitalOutput(int nPinNumber): HixPinDigital(nPinNumb
 }
 
 bool HixPinDigitalOutput::begin() {
-  return begin(OUTPUT)
+  return begin(OUTPUT);
 }
 
 bool HixPinDigitalOutput::begin(int mode) {
