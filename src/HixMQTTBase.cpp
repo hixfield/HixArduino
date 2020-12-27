@@ -38,7 +38,7 @@ bool HixMQTTBase::publishDeviceValues(void) {
         publish(topicForPath("device/device_version"), m_deviceVersion, true);
         publish(topicForPath("device/device_tag"), m_deviceTag, true);
         publish(topicForPath("device/device_name"), getMqttClientName(), true);
-        publish(topicForPath("device/wifi_mac"), Wifi.macAddress(), true);
+        publish(topicForPath("device/wifi_mac"), WiFi.macAddress(), true);
         publish(topicForPath("device/wifi_ssid"), WiFi.SSID(), true);
         publish(topicForPath("device/wifi_ip"), WiFi.localIP().toString(), true);
         //increment our publish ounter
