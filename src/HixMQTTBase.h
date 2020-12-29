@@ -13,6 +13,8 @@ class HixMQTTBase : public EspMQTTClient {
     const String m_room;
     //If multiple devices of same type are used in same room, this is used to differentiate between them
     const String m_deviceTag;
+    //timestamp of this build (firmware)
+    const String m_deviceBuildTimestamp;
     //my constructed client name
     char m_szClientName[255];
     char *createClientName(const char *szRoom, const char *szDeviceType, const char *szDeviceTag);
@@ -27,7 +29,8 @@ class HixMQTTBase : public EspMQTTClient {
                 const char *szDeviceType,
                 const char *szDeviceVersion,
                 const char *szRoom,
-                const char *szDeviceTag);
+                const char *szDeviceTag,
+                const char * szDeviceBuildTimestamp);
     //returns fals if init fails
     bool begin();
     //this creates a absolute path in the format of MyName/path" (do not start the path with a /!)

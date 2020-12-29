@@ -1,4 +1,5 @@
 #include "HixMQTTBase.h"
+
 #include <Arduino.h>
 
 HixMQTTBase::HixMQTTBase(const char* szWifi_SSID,
@@ -7,11 +8,13 @@ HixMQTTBase::HixMQTTBase(const char* szWifi_SSID,
                          const char* szDeviceType,
                          const char* szDeviceVersion,
                          const char* szRoom,
-                         const char* szDeviceTag) : EspMQTTClient(szWifi_SSID, szWiFi_Password, szMQTT_Server, createClientName(szRoom, szDeviceType, szDeviceTag)),
-                                                    m_deviceType(szDeviceType),
-                                                    m_deviceVersion(szDeviceVersion),
-                                                    m_room(szRoom),
-                                                    m_deviceTag(szDeviceTag) {
+                         const char* szDeviceTag,
+                         const char* szDeviceBuildTimestamp) : EspMQTTClient(szWifi_SSID, szWiFi_Password, szMQTT_Server, createClientName(szRoom, szDeviceType, szDeviceTag)),
+                                                               m_deviceType(szDeviceType),
+                                                               m_deviceVersion(szDeviceVersion),
+                                                               m_room(szRoom),
+                                                               m_deviceTag(szDeviceTag),
+                                                               m_deviceBuildTimestamp(szDeviceBuildTimestamp) {
 }
 
 char* HixMQTTBase::createClientName(const char* szRoom, const char* szDeviceType, const char* szDeviceTag) {
@@ -37,6 +40,7 @@ bool HixMQTTBase::publishDeviceValues(void) {
         publish(topicForPath("device/device_type"), m_deviceType, true);
         publish(topicForPath("device/device_version"), m_deviceVersion, true);
         publish(topicForPath("device/device_tag"), m_deviceTag, true);
+        publish(topicForPath("device/device_build_timestamp"), m_deviceBuildTimestamp, true);        
         publish(topicForPath("device/device_name"), getMqttClientName(), true);
         publish(topicForPath("device/wifi_mac"), WiFi.macAddress(), true);
         publish(topicForPath("device/wifi_ssid"), WiFi.SSID(), true);
