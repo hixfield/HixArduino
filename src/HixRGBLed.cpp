@@ -14,12 +14,6 @@ void HixRGBLed::setColor(HixColor color) {
     setColor(color, m_nDefaultDimPercent);
 }
 
-void HixRGBLed::setColor(const char* szRGBString) {
-    m_currentColor = parseColor(szRGBString);
-    setPixelColor(0, m_currentColor.getRGB());
-    show();
-}
-
 void HixRGBLed::setAnimate(HixLedAnimation ledAnimation) {
     //if no change nothing todo
     if (m_currentLedAnimation == ledAnimation) return;
