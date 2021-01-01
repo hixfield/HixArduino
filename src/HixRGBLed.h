@@ -28,7 +28,7 @@ class HixRGBLed : public Adafruit_NeoPixel {
     //put color value
     void setColor(HixColor color);
     void setColor(HixColor color, uint8_t nDimPercent);
-    //make blink
+    //make animation
     void setAnimate(HixLedAnimation ledMode);
 };
 
