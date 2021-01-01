@@ -3,6 +3,21 @@
 HixColor::HixColor(uint32_t nColor) : m_nColor(nColor) {
 }
 
+HixColor::HixColor(const char* szRGBString) {
+    //must always have 6 characters
+    if (strlen(szRGBString) < 6) {
+        m_nColor = 0;
+        return;
+    }
+    //storin components
+    const uint32_t hexBase = 16;
+    uint32_t nR = hexCharToInt(szRGBString[5]) * hexBase + hexCharToInt(szRGBString[4]);
+    uint32_t nG = hexCharToInt(szRGBString[3]) * hexBase + hexCharToInt(szRGBString[2]);
+    uint32_t nB = hexCharToInt(szRGBString[1]) * hexBase + hexCharToInt(szRGBString[0]);
+    //reassemble
+    m_nColor= (nR << 16) | (nG << 8) | nB;
+}
+
 uint32_t HixColor::getRGB(void) {
     return m_nColor;
 }

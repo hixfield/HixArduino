@@ -7,6 +7,7 @@
 class HixColor {
    private:
     uint32_t m_nColor;
+    uint32_t hexCharToInt(char c);
 
    public:
     //default colors
@@ -19,6 +20,7 @@ class HixColor {
     static const uint32_t magenta = 0xFF00FF;
     //constructor
     HixColor(uint32_t nColor = HixColor::black);
+    HixColor(const char* szRGBString);
     //getters/setters
     uint32_t getRGB(void);
     void setRGB(uint32_t nColor);

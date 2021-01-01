@@ -20,66 +20,6 @@ void HixRGBLed::setColor(const char* szRGBString) {
     show();
 }
 
-uint32_t HixRGBLed::parseColor(const char* szRGBString) {
-    //must always have 6 characters
-    if (strlen(szRGBString) != 6) return 0;
-    //storin components
-    const uint32_t hexBase = 16;
-    uint32_t nR = hexCharToInt(szRGBString[5]) * hexBase + hexCharToInt(szRGBString[4]);
-    uint32_t nG = hexCharToInt(szRGBString[3]) * hexBase + hexCharToInt(szRGBString[2]);
-    uint32_t nB = hexCharToInt(szRGBString[1]) * hexBase + hexCharToInt(szRGBString[0]);
-    //reassemble
-    uint32_t nColor = (nR << 16) | (nG << 8) | nB;
-    //return our calculated value
-    return nColor;
-}
-
-uint32_t HixRGBLed::hexCharToInt(char c) {
-    switch (c) {
-        case '0':
-            return 0;
-        case '1':
-            return 1;
-        case '2':
-            return 2;
-        case '3':
-            return 3;
-        case '4':
-            return 4;
-        case '5':
-            return 5;
-        case '6':
-            return 6;
-        case '7':
-            return 7;
-        case '8':
-            return 8;
-        case '9':
-            return 9;
-        case 'a':
-        case 'A':
-            return 10;
-        case 'b':
-        case 'B':
-            return 11;
-        case 'c':
-        case 'C':
-            return 12;
-        case 'd':
-        case 'D':
-            return 13;
-        case 'e':
-        case 'E':
-            return 14;
-        case 'f':
-        case 'F':
-            return 15;
-        //no match return zero
-        default:
-            return 0;
-    }
-}
-
 void HixRGBLed::setAnimate(HixLedAnimation ledAnimation) {
     //if no change nothing todo
     if (m_currentLedAnimation == ledAnimation) return;

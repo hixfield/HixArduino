@@ -13,8 +13,6 @@ class HixRGBLed : public Adafruit_NeoPixel {
    private:
     uint8_t m_nDefaultDimPercent;
     HixColor m_currentColor;
-    uint32_t hexCharToInt(char c);
-    uint32_t parseColor(const char* szRGBString);
     //vars used in animation
     Ticker m_ticker;
     HixLedAnimation m_currentLedAnimation = HixLedAnimation::off;
@@ -29,7 +27,6 @@ class HixRGBLed : public Adafruit_NeoPixel {
     HixRGBLed(int nPinNumber, neoPixelType t, uint8_t nDefaultDimPercent);
     //put color value
     void setColor(HixColor color);
-    void setColor(const char* szRGBString);
     void setColor(HixColor color, uint8_t nDimPercent);
     //make blink
     void setAnimate(HixLedAnimation ledMode);
