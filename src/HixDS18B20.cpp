@@ -20,7 +20,7 @@ bool HixDS18B20::begin(void) {
   OneWireNg::ErrorCode ec;
   m_pOneWire->searchReset();
   ec = m_pOneWire->search(m_sensorId);
-  return ec == OneWireNg::EC_DONE;
+  return ec == OneWireNg::EC_SUCCESS;
 }
 
 HixDS18B20::~HixDS18B20() {

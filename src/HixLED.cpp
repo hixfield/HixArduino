@@ -1,5 +1,10 @@
 #include "HixLED.h"
 
+//on ESP PWMRANGE is 1023 don't know why it cannot be found anymore...
+#ifndef PWMRANGE
+ #define PWMRANGE 1023
+#endif
+
 HixLED::HixLED(int nPinNumber) : HixPinDigitalOutput(nPinNumber) {
 }
 
